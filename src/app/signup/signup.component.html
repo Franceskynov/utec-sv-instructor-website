@@ -1,0 +1,175 @@
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <h3>Consultar</h3>
+              </div>
+              <form role="form" [formGroup]="frm">
+                <div class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input class="form-control"
+                           placeholder="Ingrese su carnet"
+                           type="text"
+                           autocomplete="off"
+                           formControlName="carnet"
+                           mask="00-0000-0000">
+                  </div>
+                </div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                  <input class="custom-control-input" id="customCheck1" type="checkbox" formControlName="scholarshipped">
+                  <label class="custom-control-label" for="customCheck1">
+                    <span>Becado?</span>
+                  </label>
+                </div>
+
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary mt-4" (click)="checkInstructor()" [disabled]="validateForm()">Revisar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="container">
+  <h3 class="mt-lg mb-5 text-center">
+    <span>Requisitos para ser un instructor</span>
+  </h3>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="heading mb-0">CUM Superior a 7.5</h3>
+      <p class="text-justify">
+        Para poder ser un instructor debes de tener acumulado en tu cum un min&iacute;mo
+        de 7.5 puntos
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="heading mb-0">Nota mayor o igual a 8</h3>
+      <p class="text-justify">
+        Para poder impartir una instructor&iacute; debes de tener una mater&iacute; en la que hayas obtenido
+        un min&iacute;mo de 8 puntos. Con lo cual se demuestra tus conocimientos
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="heading mb-0">Compromiso & Responsabilidad</h3>
+      <p class="text-justify">
+        Adem&aacute; debes de tener compromiso y responsabilidad a la hora de asumir las responsabilidades que son asignadas.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <h3 class="mt-lg mb-5 text-center">
+    <span>Beneficios de ser instructor</span>
+  </h3>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="heading mb-0">Compartir tus conocimientos </h3>
+      <p class="text-justify">
+        Es una buena forma de empezar a poner en pr&aacute;tica tus conocimientos obtenidos en alguna materia.
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="heading mb-0">Conocer a otras personas </h3>
+      <p class="text-justify">
+        Puede ser beneficioso para tu carrera ya que puedes dar a conocer tus habilidades
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="heading mb-0">Horas sociales </h3>
+      <p class="text-justify">
+        Al finalizar el ciclo cursado se te otorgaran 150 horas sociales.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<ng-template #classic2 let-c="close" let-d="dismiss">
+  <div class="modal-content bg-gradient-warning">
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-title-notification">Ya esta registrado en el sistema.</h6>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="py-3 text-center">
+        <h4 class="heading mt-4">Saludos!</h4>
+        <p>
+          Si estas leyendo esto significa que ya estas registrado en el sistema,
+          ingresa al correo institucional para revisar las credenciales en caso de aun no haber activado tu cuenta.
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cerrar</button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #classic3 let-c="close" let-d="dismiss">
+  <div class="modal-content bg-gradient-success">
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-title-notificationA">Usted aplica para instructor</h6>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="py-3 text-center">
+        <h4 class="heading mt-4">Saludos!</h4>
+       <p>Te hemos enviado un mensaje a tu correo institucional para verificar que realmente este es tu carnet.</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cerrar</button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #classic4 let-c="close" let-d="dismiss">
+  <div class="modal-content bg-gradient-warning">
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-title-notificationB">Parece que es de nuevo ingreso</h6>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="py-3 text-center">
+        <h4 class="heading mt-4">Saludos!</h4>
+        <p>
+          Por el momento no dispone de notas.
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cerrar</button>
+    </div>
+  </div>
+</ng-template>
