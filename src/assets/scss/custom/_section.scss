@@ -34,7 +34,7 @@
     .stars-and-coded{
         margin-top: 8rem;
     }
-    
+
     .shape {
         position: absolute;
         top: 0;
@@ -490,7 +490,7 @@
 
 @include media-breakpoint-down(md) {
     .section-profile-cover {
-        height: 400px;
+        height: 200px;
     }
 }
 

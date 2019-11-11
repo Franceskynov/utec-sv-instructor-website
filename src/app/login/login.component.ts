@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit {
       } else {
         this.toastr.warning('Las credenciales no coinciden');
       }
+    } else {
+      this.toastr.warning('Por el momento este dispositivo no tiene credenciales asociadas');
     }
   }
 

@@ -8,14 +8,15 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from 'app/guards/auth.guard';
+import { NotFoundComponent } from 'app/components/not-found/not-found.component';
 
 const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent
     },
     {
-        path: 'register',
+        path: 'aplicar',
         component: SignupComponent
     },
     {
@@ -28,9 +29,8 @@ const routes: Routes = [
         component: ProfileComponent
     },
     {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
+        path: '**',
+        component: NotFoundComponent,
     }
 ];
 

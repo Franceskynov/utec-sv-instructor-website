@@ -22,6 +22,7 @@ import { LoaderService } from 'app/services/loader.service';
 import { LoaderInterceptor } from 'app/interceptors/loader.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
       ProfileComponent,
       LoaderComponent,
       LoginComponent,
+      NotFoundComponent,
   ],
     imports: [
         BrowserModule,

@@ -3,3 +3,25 @@
 @import '~@swimlane/ngx-datatable/themes/material.css';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
 @import '~ngx-toastr/toastr.css';
+
+
+.blurred {
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+
+
+.tecno-hero {
+    background-image: linear-gradient(87deg, rgba(210,9,116,0.70) 0, rgba(210,9,32, 0.25) 100%),  url('/assets/img/students.dist.jpg');
+    background-size: cover;
+    /*background: transparent!important;*/
+    /*background: linear-gradient(87deg, #d20974 0, #d20920 100%) !important;*/
+    background-repeat: no-repeat;
+    height: 480px;
+}
+

@@ -21,6 +21,8 @@ export class SignupComponent implements OnInit {
     public classic3;
     @ViewChild('classic4')
     public classic4;
+    @ViewChild('classic5')
+    public classic5;
     public frm: FormGroup;
     public closeResult: string;
     public row: any;
@@ -38,7 +40,10 @@ export class SignupComponent implements OnInit {
 
     ngOnInit() {
         this.sent = false;
-        console.log('sample', this.encriptacionService.encryptData('hola'));
+        this.settings = {
+            minimum_score: 0,
+            minimun_cum: 0,
+        };
         this.configuracionesService.getSettings().subscribe(response => {
            this.settings = response.data;
         }, () => {},
@@ -79,13 +84,17 @@ export class SignupComponent implements OnInit {
                             is_scholarshipped: this.frm.controls.scholarshipped.value
                         };
 
-                        const credentials = {
-                            email: email,
-                            password: this.makePassword()
-                        };
-                        this.temporalUserActivation(credentials);
-                        localStorage.setItem('credentials', this.encriptacionService.encryptData(JSON.stringify(credentials)));
-                        localStorage.setItem('pensumData', this.encriptacionService.encryptData(frmData));
+                        if (this.notas.length > 0) {
+                            const credentials = {
+                                email: email,
+                                password: this.makePassword()
+                            };
+                            this.temporalUserActivation(credentials);
+                            localStorage.setItem('credentials', this.encriptacionService.encryptData(JSON.stringify(credentials)));
+                            localStorage.setItem('pensumData', this.encriptacionService.encryptData(frmData));
+                        } else {
+                            this.open(this.classic5, 'Notification', '');
+                        }
 
                     } else {
                         this.open(this.classic4, 'Notification', '');

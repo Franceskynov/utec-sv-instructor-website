@@ -4,7 +4,8 @@
 
 export const environment = {
   production: true,
-  CONTROL_URL_API: 'http://localhost:8000/api/v1/',
+  // CONTROL_URL_API: 'http://localhost:8000/api/v1/',
+  CONTROL_URL_API: 'http://192.168.1.4:8000/api/v1/',
   APP_KEY: '',
   MESSAGES: {
     SERVICE_ERROR: 'Error al conectarse al servicio',

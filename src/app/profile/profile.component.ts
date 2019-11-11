@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
 
+    public width: number;
     public created: boolean;
     public frm: FormGroup;
     public instructorData: any;
@@ -50,6 +51,7 @@ export class ProfileComponent implements OnInit {
             is_scholarshipped: new FormControl({value: false, disabled: false}, [])
         });
         this.retrieveData();
+        this.width = Number(document.body.scrollWidth);
     }
 
     get f() { return this.frm.controls; }
@@ -161,7 +163,11 @@ export class ProfileComponent implements OnInit {
     public clean(): void {
         localStorage.clear();
         setTimeout(() => {
-            this.router.navigate(['/', 'register']);
+            this.router.navigate(['/', 'aplicar']);
         }, 2000);
+    }
+
+    public responsiveTable(): boolean {
+        return (this.width > 500);
     }
 }

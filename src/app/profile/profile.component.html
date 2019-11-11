@@ -12,7 +12,7 @@
         <div class="px-4">
           <div class="row justify-content-center">
             <div class="col-lg-3 order-lg-2">
-              <div class="card-profile-image">
+              <div class="card-profile-image mb-2">
                 <a href="javascript:void(0)">
                   <img src="/assets/img/ui/people.png" class="rounded-circle">
                 </a>
@@ -62,15 +62,15 @@
                                [limit]="5"
                                [rowHeight]="'auto'"
                                [rows]='notas'>
-                  <ngx-datatable-column name="Codigo" prop="mat_codigo"></ngx-datatable-column>
+                  <ngx-datatable-column name="Codigo" prop="mat_codigo" *ngIf="responsiveTable()"></ngx-datatable-column>
                   <ngx-datatable-column name="Materia" prop="mat_nombre"></ngx-datatable-column>
-                  <ngx-datatable-column name="Nota" prop="nota">
+                  <ngx-datatable-column name="Nota" prop="nota" [width]="15">
                     <ng-template let-row="row" let-id="value" ngx-datatable-cell-template>
                       <span *ngIf="validateNota(row.nota)" class="highlight"> {{ row.nota }}</span>
                       <span *ngIf="!validateNota(row.nota)"> {{ row.nota }} </span>
                     </ng-template>
                   </ngx-datatable-column>
-                  <ngx-datatable-column name="Estado" prop="estado"></ngx-datatable-column>
+                  <ngx-datatable-column name="Estado" prop="estado" *ngIf="responsiveTable()"></ngx-datatable-column>
                 </ngx-datatable>
               </div>
             </div>
@@ -116,12 +116,12 @@
 
                 <div class="form-group">
                     <label for="phone">Telefono:</label>
-                    <input type="text" class="form-control" id="phone" name="phone" mask="00000-0000" formControlName="phone" [ngClass]="paintError(frm, 'phone')" autocomplete="off">
+                    <input type="text" class="form-control" id="phone" name="phone" formControlName="phone" [ngClass]="paintError(frm, 'phone')" autocomplete="tel">
                 </div>
 
                 <div class="form-group">
                     <label for="personalEmail">Email personal:</label>
-                    <input type="text" class="form-control" id="personalEmail" name="personalEmail" formControlName="personalEmail" [ngClass]="paintError(frm, 'personalEmail')" autocomplete="off">
+                    <input type="text" class="form-control" id="personalEmail" name="personalEmail" formControlName="personalEmail" [ngClass]="paintError(frm, 'personalEmail')" autocomplete="email">
                 </div>
 
                 <div class="form-check">

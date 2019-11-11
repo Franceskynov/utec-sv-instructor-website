@@ -17,8 +17,8 @@
 
 .ldr {
   position:absolute;
-  top:30%;
-  left:50%;
+  top: 30%;
+  left: calc(50% - 51px);
   height: 100px;
   width: 100px;
   // transform: translate(-50%,-50%);

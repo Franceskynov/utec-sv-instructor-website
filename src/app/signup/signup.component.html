@@ -1,7 +1,7 @@
 <main>
   <section class="section section-shaped section-lg">
-    <div class="shape shape-style-1 bg-gradient-default">
-      <span></span><span></span><span></span><span></span>
+    <div class="shape shape-style-1 tecno-hero">
+
     </div>
     <div class="container pt-lg-md">
       <div class="row justify-content-center">
@@ -36,7 +36,7 @@
 
 
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4" (click)="checkInstructor()" [disabled]="validateForm()">Revisar</button>
+                  <button type="button" class="btn btn-primary mt-4" (click)="checkInstructor()" [disabled]="validateForm()">Aplicar</button>
                 </div>
               </form>
             </div>
@@ -56,14 +56,15 @@
       <h3 class="heading mb-0">CUM Superior a 7.5</h3>
       <p class="text-justify">
         Para poder ser un instructor debes de tener acumulado en tu cum un min&iacute;mo
-        de 7.5 puntos
+        de {{ settings.minimun_cum }} puntos
+        <small>Nota: si tu CUM es inferior al indicado, pero si tienes materias con una nota igual o superior a {{ settings.minimum_score }} puedes aplicar.</small>
       </p>
     </div>
     <div class="col-md-4">
-      <h3 class="heading mb-0">Nota mayor o igual a 8</h3>
+      <h3 class="heading mb-0">Nota mayor o igual a {{ settings.minimum_score }}</h3>
       <p class="text-justify">
-        Para poder impartir una instructor&iacute; debes de tener una mater&iacute; en la que hayas obtenido
-        un min&iacute;mo de 8 puntos. Con lo cual se demuestra tus conocimientos
+        Para poder impartir una instructor&iacute;a debes de tener una mater&iacute; en la que hayas obtenido
+        un min&iacute;mo de {{ settings.minimum_score }} puntos. Con lo cual se demuestra tus conocimientos
       </p>
     </div>
     <div class="col-md-4">
@@ -165,6 +166,33 @@
         <h4 class="heading mt-4">Saludos!</h4>
         <p>
           Por el momento no dispone de notas.
+        </p>
+
+        <p>
+          Regrese en otra ocacion
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Cerrar</button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #classic5 let-c="close" let-d="dismiss">
+  <div class="modal-content bg-gradient-danger">
+    <div class="modal-header">
+      <h6 class="modal-title" id="modal-title-notificationC">No tiene notas de acuerdo a los requerimientos</h6>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="py-3 text-center">
+        <h4 class="heading mt-4">Saludos!</h4>
+        <p>
+          Por favor regrese en otra ocasi&oacute;n cuando su cum o sus notas cumplan con los requrimientos
         </p>
       </div>
     </div>

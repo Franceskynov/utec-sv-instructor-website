@@ -11,7 +11,7 @@
             //min-height: 130px;
 
             img {
-                max-width: 180px;
+                max-width: 150px;
                 border-radius: $border-radius;
                 @extend .shadow;
                 transform: translate(-50%,-30%);
@@ -56,7 +56,7 @@
         @include media-breakpoint-down(xs) {
             .card-profile-actions {
                 margin-top: 110px;
-            } 
+            }
         }
 
         @include media-breakpoint-between(sm, md) {
