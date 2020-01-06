@@ -41,8 +41,8 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         this.sent = false;
         this.settings = {
-            minimum_score: 0,
-            minimun_cum: 0,
+            minimum_score: 7.5,
+            minimun_cum: 8,
         };
         this.configuracionesService.getSettings().subscribe(response => {
            this.settings = response.data;

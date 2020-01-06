@@ -11,13 +11,15 @@ export class CredencialesService {
   public headers: HttpHeaders;
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
-      'Platform': 'website'
+      'Platform': 'website',
+      'Client': environment.CLIENT_AUTHORIZATION
     });
   }
 
   public temporalUserActivation(frmData) {
-    return this.http.post<any>(environment.CONTROL_URL_API.concat('credentials/temporalUserActivation'), frmData)
-        .pipe(map(data => {
+    return this.http.post<any>(environment.CONTROL_URL_API.concat('credentials/temporalUserActivation'), frmData, {
+      headers: this.headers
+    }).pipe(map(data => {
           return data;
         }));
   }

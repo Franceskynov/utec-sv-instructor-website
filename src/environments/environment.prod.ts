@@ -1,7 +1,8 @@
 export const environment = {
   production: true,
   CONTROL_URL_API: window.location.protocol + '//' + window.location.host + '/api/v1/',
-  APP_KEY: '',
+  APP_KEY: '6ZuNRwGbPhFTZvYg6cDl51PbSx0ck96WyXVhXBazxw8=',
+  CLIENT_AUTHORIZATION: 'BuYsqt9wA8Uoi3DzaI512DLCA0OKA63crLK/hWnw7I4Sv9hARp4Jd9AACHAOqZJtyDiEPFs3AbQlWlTX4x4zVQ==',
   MESSAGES: {
     SERVICE_ERROR: 'Error al conectarse al servicio',
     SERVICE_WARN: '',

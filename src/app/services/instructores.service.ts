@@ -12,7 +12,8 @@ export class InstructoresService {
   public headers: HttpHeaders;
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
-      'Platform': 'website'
+        'Platform': 'website',
+        'Client': environment.CLIENT_AUTHORIZATION
     });
   }
 
